@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora con Memoria</title>
+	<link rel="stylesheet" type="text/css" href="estilizado.css">
+	<audio src="Battle Lance Champion.mp3" preload loop id="home"></audio>
+</head>
+<body>
+<button onclick="blala()" class="musica">Música</button>
+<button onclick="noblala()" class="nomusica">Pausar</button>
+<div class="XD">😀</div>
+<div class="DX">🤐</div>
+<div class="XD1">😀</div>
+<div class="DX1">🤐</div>
+<script>
+			vec=[];
+		var ingre=function(){
+				var n1=document.getElementById("nombre");
+		        var n2=document.getElementById("nombre1");
+		        suma = Number(n1.value) + Number(n2.value);
+				vec.push(suma);
+				console.log(suma)
+				var r1=document.getElementById("resultado1");
+				r1.value=suma;
+			}
+			var Mostrar=function(){
+			var m1=document.getElementById("resultado");
+			var x=Number(m1.value);
+            m1.value=vec[x];
+			}
+				function blala(){
+		document.getElementById('home').play();
+		document.querySelector(".musica").style.display="none";
+	    document.querySelector(".nomusica").style.display="block";
+	    document.querySelector(".DX").style.display="none";
+	    document.querySelector(".XD").style.display="block";
+	    document.querySelector(".DX1").style.display="none";
+	    document.querySelector(".XD1").style.display="block";
+
+	}
+		function noblala(){
+		document.getElementById('home').pause();
+		document.querySelector(".musica").style.display="block";
+	    document.querySelector(".nomusica").style.display="none";
+	    document.querySelector(".DX").style.display="block";
+	    document.querySelector(".XD").style.display="none";
+	    document.querySelector(".DX1").style.display="block";
+	    document.querySelector(".XD1").style.display="none";
+	}
+	</script>
+</body>
+<form>
+		<label class="a">Número 1️⃣:</label><br><br>
+		<input type="text" id="nombre" placeholder="Ingrese un número" class="a1"><br><br>
+		<br>
+		<br>
+		<label class="a2">Número 2️⃣:</label><br><br>
+		<input type="text" id="nombre1" placeholder="Ingrese un número" class="a3"><br><br>
+		<br>
+		<label class="a4">Resultado:</label><br>
+		<input type="text" id="resultado1" placeholder="Campo Vacío 😶" class="a5">
+		<br>
+		<br>
+		<input type="button" value="Ingresar" onclick="ingre()" class="a6">
+		<br>
+		<br>
+		<br>
+		<label class="a7">Buscar respuesta:</label><br>
+		<input type="text" id="resultado" placeholder="Campo Vacío 😶" class="a8">
+				<br>
+		<br>
+		<input type="button" value="Buscar" onclick="Mostrar()" class="a9">
+	</form>
+</html>
